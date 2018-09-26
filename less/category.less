@@ -1,0 +1,97 @@
+/* 在分类的less里面去引入公共的less文件 */
+
+@import 'base.less';
+#header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/* 分类页面使用的滑动 不能出现滚动条 水平和垂直都不能有滚动条 */
+
+.layout {
+    height: 100%;
+    padding-top: 45px;
+    padding-bottom: 50px;
+    #main {
+        height: 100%;
+        display: flex;
+        background-color: #fff;
+        .category-left {
+            width: 85px;
+            height: 100%;
+            /* 左侧滑动的容器的样式 容器高度100%和屏幕一样高  他还有父容器每个父容器都要加100%高度*/
+            .swiper-container {
+                width: 100%;
+                height: 100%;
+            }
+            /* 左侧滑动内容的样式 高度自动按内容撑开 */
+            .swiper-slide {
+                height: auto;
+            }
+            ul {
+                >li {
+                    background-color: #f8f8f8;
+                    &.active {
+                        background-color: #fff;
+                        >a {
+                            color: @mainColor;
+                        }
+                    }
+                    > a {
+                        font-size: 14px;
+                        display: block;
+                        text-align: center;
+                        line-height: 46px;
+                    }
+                }
+            }
+        }
+        .category-right {
+            flex: 1;
+            padding: 10px;
+            height: 100%;
+            .swiper-container {
+                width: 100%;
+                height: 100%;
+            }
+            .swiper-slide {
+                height: auto;
+            }
+            #branchList {
+                .jd-brand {
+                    >h4 {
+                        font-size: 14px;
+                    }
+                    >ul {
+                        padding: 10px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        >li {
+                            width: 33.33%;
+                            margin: 5px 0;
+                            >a {
+                                display: block;
+                                text-align: center;
+                                >img {
+                                    width: 70px;
+                                    height: 70px;
+                                }
+                                >span {
+                                    display: block;
+                                    font-size: 12px;
+                                    margin: 5px 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,201 @@
+/* 在首页的index.less去导入公共样式文件 */
+
+@import 'base.less';
+
+
+#slide {
+    img {
+        width: 100%;
+    }   
+    .swiper-pagination-bullet {
+        width: 6px;
+        height: 6px;
+        border:1px solid #fff;
+        background-color: transparent;
+        opacity:1;
+    }
+     .swiper-pagination-bullet-active {
+        background-color: #fff;
+    }
+
+}
+
+
+/* 导航条样式 */
+
+#nav {
+    padding: 10px;
+    background-color: #fff;
+    >ul {
+        display: flex;
+        /* 支持换行 */
+        flex-wrap: wrap;
+        justify-content: space-around;
+        >li {
+            width: 25%;
+            >a {
+                display: block;
+                text-align: center;
+                >img {
+                    width: 40px;
+                    height: 40px;
+                }
+                p {
+                    font-size: 14px;
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+}
+
+#products {
+    padding: 10px;
+}
+
+
+/* 秒杀区域样式 */
+
+#seckill {
+    background-color: #fff;
+    margin-top: 10px;
+    box-shadow: 0px 0px 2px #ccc;
+    .seckill-title {
+        height: 30px;
+        line-height: 30px;
+        .seckill-icon {
+            width: 20px;
+            height: 25px;
+            margin-left: 5px;
+        }
+        .seckill-name {
+            color: @mainColor;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+        .seckill-time {
+            margin-left: 5px;
+            >span {
+                margin-top: 5px;
+                background-color: #000;
+                color: #fff;
+                width: 15px;
+                height: 15px;
+                line-height: 15px;
+                text-align: center;
+                display: inline-block;
+                /* 把3n 3 和 6两个冒号变色 */
+                &:nth-child(3n) {
+                    width: 5px;
+                    background-color: #fff;
+                    color: #000;
+                }
+            }
+        }
+        .seckill-more {
+            float: right;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+    }
+    .seckill-content {
+        padding: 10px 0;
+        >ul {
+            display: flex;
+            >li {
+                width: 33.33%;
+                /* CSS3的下一个兄弟选择器  排除第一个效果 */
+                + li {
+                    border-left: 1px solid #ccc;
+                }
+                >a {
+                    display: block;
+                    text-align: center;
+                    >img {
+                        width: 100%;
+                    }
+                    >p {
+                        font-size: 12px;
+                        /* 只选中当前类型的第一个子元素 选中第一个p元素  nth-of-type  last-of-type */
+                        &:first-of-type {
+                            color: @mainColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 京东超市样式 */
+
+.jd-market {
+    background-color: #fff;
+    box-shadow: 0px 0px 2px #ccc;
+    margin-top: 10px;
+    .jd-market-content {
+        display: flex;
+        >div {
+            width: 50%;
+            >a {
+                width: 100%;
+                display: block;
+                >img {
+                    width: 100%;
+                }
+            }
+        }
+        .right {
+            border-left: 1px solid #ccc;
+            >a:first-child {
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    }
+}
+
+.jd-product-title {
+    border-bottom: 1px solid #ccc;
+    >h4 {
+        position: relative;
+        padding-left: 20px;
+        line-height: 30px;
+        font-weight: normal;
+        &::before {
+            content: '';
+            width: 4px;
+            height: 15px;
+            background-color: @mainColor;
+            position: absolute;
+            left: 10px;
+            top: 7px;
+        }
+    }
+}
+
+.jd-hot {
+    background-color: #fff;
+    box-shadow: 0px 0px 2px #ccc;
+    margin-top: 10px;
+    .jd-hot-content {
+        display: flex;
+        >div {
+            width: 50%;
+            >a {
+                width: 100%;
+                display: block;
+                >img {
+                    width: 100%;
+                }
+            }
+        }
+        .left {
+            border-right: 1px solid #ccc;
+            >a:first-child {
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    }
+}
+
